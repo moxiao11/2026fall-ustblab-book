@@ -32,6 +32,15 @@ const sidebarConfig = [
       { label: '完成的任务', path: '/lab3/04-完成的任务' },
     ],
   },
+  {
+    section: 'Lab4 · 分层卡池抽卡',
+    items: [
+      { label: '语法学习', path: '/lab4/01-语法学习' },
+      { label: '抽卡算法介绍', path: '/lab4/02-抽卡算法介绍' },
+      { label: 'Makefile 介绍', path: '/lab4/03-Makefile介绍' },
+      { label: '实验任务', path: '/lab4/04- 实验任务' },
+    ],
+  },
 ];
 
 // Lab 概述内容（纯 HTML）
@@ -118,6 +127,33 @@ const labOverviews = {
       <li><a href="#/lab3/02-NumPy库介绍">NumPy 库介绍</a> — 了解 NumPy 的设计思路</li>
       <li><a href="#/lab3/03-测试文件">测试文件</a> — 学习如何为 NdArray 编写测试</li>
       <li><a href="#/lab3/04-完成的任务">完成的任务</a> — 实验要求与步骤</li>
+    </ol>
+  `,
+  '/lab4/': `
+    <h1>Lab4 · 分层卡池抽卡系统</h1>
+    <h2>实验目标</h2>
+    <p>实现一个分层卡池抽卡系统，模拟游戏中的抽卡机制。学习模板的 <code>.tpp</code> 文件分离、异常处理以及 Makefile 构建工具。</p>
+    <h2>涉及知识点</h2>
+    <ul>
+      <li>模板类声明与实现分离（<code>.h</code> + <code>.tpp</code>）</li>
+      <li>异常处理 <code>try</code> / <code>throw</code> / <code>catch</code></li>
+      <li>分层卡池算法（普通池、反欧池、友好池、硬保底池）</li>
+      <li>Makefile 编写与使用</li>
+      <li>多文件项目组织</li>
+    </ul>
+    <h2>你将带走的能力</h2>
+    <ul>
+      <li>能理解模板的编译期实例化机制，知道为什么模板实现要放在头文件中</li>
+      <li>能用异常处理来应对运行时错误</li>
+      <li>能阅读和编写简单的 Makefile</li>
+      <li>能设计分层随机算法</li>
+    </ul>
+    <h2>阅读顺序</h2>
+    <ol>
+      <li><a href="#/lab4/01-语法学习">语法学习</a> — .tpp 文件、异常处理</li>
+      <li><a href="#/lab4/02-抽卡算法介绍">抽卡算法介绍</a> — 分层卡池设计思路</li>
+      <li><a href="#/lab4/03-Makefile介绍">Makefile 介绍</a> — 构建工具入门</li>
+      <li><a href="#/lab4/04- 实验任务">实验任务</a> — 动手实现</li>
     </ol>
   `,
 };
@@ -289,7 +325,7 @@ function renderHome() {
   contentEl.innerHTML = `
     <div class="home-hero">
       <h1>程序设计基础实验</h1>
-      <p class="subtitle">C++ 编程入门实验手册 — 从贪吃蛇到简易 NumPy，三个实验带你走进 C++ 的世界</p>
+      <p class="subtitle">C++ 编程入门实验手册 — 从贪吃蛇到分层卡池抽卡，四个实验带你走进 C++ 的世界</p>
     </div>
     <div class="home-cards">
       <a class="home-card" href="#/lab1/">
@@ -306,6 +342,11 @@ function renderHome() {
         <div class="card-icon">🧮</div>
         <h3>Lab3 · NdArray</h3>
         <p>vector、模板、运算符重载，从零实现一个简易的 NumPy 多维数组</p>
+      </a>
+      <a class="home-card" href="#/lab4/">
+        <div class="card-icon">🎰</div>
+        <h3>Lab4 · 分层卡池抽卡</h3>
+        <p>模板分离编译、异常处理、分层随机算法与 Makefile——揭秘抽卡背后的逻辑</p>
       </a>
     </div>
   `;
