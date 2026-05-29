@@ -41,6 +41,21 @@ const sidebarConfig = [
       { label: '实验任务', path: '/lab4/04- 实验任务' },
     ],
   },
+  {
+    section: 'Lab5 · 音乐合成',
+    items: [
+      { label: '语法学习', path: '/lab5/01-语法学习' },
+      { label: '声音合成方法', path: '/lab5/02-声音合成方法' },
+      { label: '生成的 WAV 文件', path: '/lab5/03-生成的wav文件' },
+      { label: '实验任务', path: '/lab5/04-实验任务' },
+    ],
+  },
+  {
+    section: '附录',
+    items: [
+      { label: 'AI Agent 使用规范', path: '/Al agent Policy' },
+    ],
+  },
 ];
 
 // Lab 概述内容（纯 HTML）
@@ -154,6 +169,33 @@ const labOverviews = {
       <li><a href="#/lab4/02-抽卡算法介绍">抽卡算法介绍</a> — 分层卡池设计思路</li>
       <li><a href="#/lab4/03-Makefile介绍">Makefile 介绍</a> — 构建工具入门</li>
       <li><a href="#/lab4/04- 实验任务">实验任务</a> — 动手实现</li>
+    </ol>
+  `,
+  '/lab5/': `
+    <h1>Lab5 · 音乐合成</h1>
+    <h2>实验目标</h2>
+    <p>用 C++ 读取乐谱文件，通过正弦波与 ADSR 包络合成音频，生成 WAV 文件。学习 <code>map</code> 关联容器、文件流读写，并动手编写 Makefile。致敬 CS61B 的音乐项目。</p>
+    <h2>涉及知识点</h2>
+    <ul>
+      <li><code>map&lt;string, int&gt;</code> 关联容器（音符→频率映射）</li>
+      <li><code>ifstream</code> / <code>ofstream</code> 文件流读写</li>
+      <li>频率、正弦波、谐波与 ADSR 包络</li>
+      <li>WAV 文件格式（RIFF 头、PCM 数据）</li>
+      <li>Makefile 编写（多目标、多文件编译）</li>
+    </ul>
+    <h2>你将带走的能力</h2>
+    <ul>
+      <li>能用 <code>map</code> 建立键值映射，替代大量 <code>if/else</code></li>
+      <li>能用文件流读写文本和二进制数据</li>
+      <li>能理解声音合成的基本原理</li>
+      <li>能独立编写 Makefile 构建多文件项目</li>
+    </ul>
+    <h2>阅读顺序</h2>
+    <ol>
+      <li><a href="#/lab5/01-语法学习">语法学习</a> — 文件读写、关联容器与常用技巧</li>
+      <li><a href="#/lab5/02-声音合成方法">声音合成方法</a> — 频率、正弦波、谐波与 ADSR</li>
+      <li><a href="#/lab5/03-生成的wav文件">生成的 WAV 文件</a> — 格式、写入与播放</li>
+      <li><a href="#/lab5/04-实验任务">实验任务</a> — TODO 任务清单与编译运行</li>
     </ol>
   `,
 };
@@ -325,7 +367,7 @@ function renderHome() {
   contentEl.innerHTML = `
     <div class="home-hero">
       <h1>程序设计基础实验</h1>
-      <p class="subtitle">C++ 编程入门实验手册 — 从贪吃蛇到分层卡池抽卡，四个实验带你走进 C++ 的世界</p>
+      <p class="subtitle">C++ 编程入门实验手册 — 从贪吃蛇到音乐合成，五个实验带你走进 C++ 的世界</p>
     </div>
     <div class="home-cards">
       <a class="home-card" href="#/lab1/">
@@ -347,6 +389,11 @@ function renderHome() {
         <div class="card-icon">🎰</div>
         <h3>Lab4 · 分层卡池抽卡</h3>
         <p>模板分离编译、异常处理、分层随机算法与 Makefile——揭秘抽卡背后的逻辑</p>
+      </a>
+      <a class="home-card" href="#/lab5/">
+        <div class="card-icon">🎵</div>
+        <h3>Lab5 · 音乐合成</h3>
+        <p>map 关联容器、文件流读写、正弦波与 ADSR 包络——用代码谱写乐章</p>
       </a>
     </div>
   `;
